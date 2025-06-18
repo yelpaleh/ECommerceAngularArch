@@ -57,22 +57,28 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
 ##------------------------------------------------
-Angular E-Commerce Application - v20.0 
 
-Design layout
- 
-Create Angular Application – ng new e-commerce
- 
+##Angular E-Commerce Application - v20.0 
 
-Features folder structure
- 
-Layout folder structure
- 
+##Design layout
+ ![image](https://github.com/user-attachments/assets/10fed42f-e202-4f3c-bc93-99051191f5c2)
+
+##Create Angular Application – ng new e-commerce
+ ![image](https://github.com/user-attachments/assets/ff5b7824-6c07-4aca-b743-ba284b8f3f03)
 
 
+##Features folder structure
+ ![image](https://github.com/user-attachments/assets/586e5d8b-fd91-4ec7-a12d-c2994028744c)
 
-Step 1: Generate All Components (Standalone)
+##Layout folder structure
+ ![image](https://github.com/user-attachments/assets/c241d081-c93d-4dbb-911c-8e2650bfee7f)
+
+
+
+
+##Step 1: Generate All Components (Standalone)
 Run the following CLI commands in your terminal:
 
  ng g c layout/header --standalone
@@ -86,11 +92,13 @@ Run the following CLI commands in your terminal:
  ng g c report --standalone
  ng g c contact --standalone
 
-This will create the directory structure:
+##This will create the directory structure:
 src/app/
- 
-Design layout component – header/sidebar/footer
+ ![image](https://github.com/user-attachments/assets/8b7bf14d-2ceb-414e-81ff-6acec8f0494a)
+
+##Design layout component – header/sidebar/footer
 Style Header, Footer & Navigation (follow code base)
+
 App.ts - app.ts (for main layout)
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
@@ -182,6 +190,7 @@ npm install chart.js
 npm install ng2-charts@^4 chart.js
 Refer Dashboard .html and .ts file
 
- 
+ ![image](https://github.com/user-attachments/assets/82073671-a91f-4fb6-b156-aac766c033c0)
+
 
 
