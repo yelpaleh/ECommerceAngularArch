@@ -60,25 +60,22 @@ For more information on using the Angular CLI, including detailed command refere
 
 ##------------------------------------------------
 
-**##**Angular E-Commerce Application - v20.0** **
+## Angular E-Commerce Application - v20.0
 
-**##Design layout**
+## Design layout
  ![image](https://github.com/user-attachments/assets/10fed42f-e202-4f3c-bc93-99051191f5c2)
 
-**##Create Angular Application** – ng new e-commerce
+## Create Angular Application – ng new e-commerce
  ![image](https://github.com/user-attachments/assets/ff5b7824-6c07-4aca-b743-ba284b8f3f03)
 
 
-**##Features folder structure**
+## Features folder structure
  ![image](https://github.com/user-attachments/assets/586e5d8b-fd91-4ec7-a12d-c2994028744c)
 
-**##Layout folder structure**
+## Layout folder structure
  ![image](https://github.com/user-attachments/assets/c241d081-c93d-4dbb-911c-8e2650bfee7f)
 
-
-
-
-**##Step 1: Generate All Components (Standalone)**
+## Step 1: Generate All Components (Standalone)
 Run the following CLI commands in your terminal:
 
  ng g c layout/header --standalone
@@ -92,18 +89,22 @@ Run the following CLI commands in your terminal:
  ng g c report --standalone
  ng g c contact --standalone
 
-**##This will create the directory structure:**
+## This will create the directory structure:
 src/app/
  ![image](https://github.com/user-attachments/assets/8b7bf14d-2ceb-414e-81ff-6acec8f0494a)
 
-**##Design layout component – header/sidebar/footer**
+## Design layout component – header/sidebar/footer
 Style Header, Footer & Navigation (follow code base)
 
-**App.ts** - app.ts (for main layout)
+## App.ts - app.ts (for main layout)
 import { Component } from '@angular/core';
+
 import { RouterOutlet } from '@angular/router';
+
 import { Header } from './layout/header/header';
+
 import { Footer } from './layout/footer/footer';
+
 import { Sidebar } from './layout/sidebar/sidebar';
 
 @Component({
