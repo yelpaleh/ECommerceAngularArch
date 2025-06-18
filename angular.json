@@ -25,7 +25,8 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+               "node_modules/bootstrap/dist/css/bootstrap.min.css",
+  "src/styles.css"
             ]
           },
           "configurations": {
@@ -53,6 +54,9 @@
           "defaultConfiguration": "production"
         },
         "serve": {
+          "options": {
+    "port": 4242
+  },
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
@@ -88,5 +92,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

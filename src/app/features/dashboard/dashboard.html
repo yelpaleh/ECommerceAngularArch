@@ -1,0 +1,36 @@
+<div class="container-fluid p-3">
+    <h3 class="mb-4">Dashboard Overview</h3>
+
+    <div class="row g-4">
+        <div class="col-md-3" *ngFor="let card of stats">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <h5 class="card-title">{{card.title}}</h5>
+                    <h3>{{card.value}}</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <h5 class="card-title">Sales Overview</h5>
+                    <canvas baseChart [data]="barChartData" [type]="barChartType" [options]="barChartOptions">
+                    </canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <h5 class="card-title">Orders Status</h5>
+                    <canvas baseChart [data]="doughnutChartData" [type]="doughnutChartType" [options]="barChartOptions">
+                    </canvas>
+
+                </div>
+            </div>
+        </div>       
+
+    </div>
+</div>
