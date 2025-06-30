@@ -1,0 +1,40 @@
+<h2>Template-driven Form</h2>
+    <form #f="ngForm" (ngSubmit)="onSubmit()">
+      <label>Name:</label>
+      <input name="name" [(ngModel)]="user.name" required />
+      <br />
+
+      <label>Email:</label>
+      <input name="email" [(ngModel)]="user.email" required email />
+      <br />
+
+      <label>Age:</label>
+      <input type="number" name="age" [(ngModel)]="user.age" required />
+      <br />
+
+      <label>Bio:</label>
+      <textarea name="bio" [(ngModel)]="user.bio"></textarea>
+      <br />
+
+      <label>Gender:</label>
+      <input type="radio" name="gender" [(ngModel)]="user.gender" value="Male" /> Male
+      <input type="radio" name="gender" [(ngModel)]="user.gender" value="Female" /> Female
+      <br />
+
+      <label>Subscribe:</label>
+      <input type="checkbox" name="subscribe" [(ngModel)]="user.subscribe" />
+      <br />
+
+      <label>Country:</label>
+      <select name="country" [(ngModel)]="user.country">
+        <option value="">Select Country</option>
+        <option value="India">India</option>
+        <option value="USA">USA</option>
+        <option value="UK">UK</option>
+      </select>
+      <br />
+
+      <button type="submit" [disabled]="f.invalid">Submit</button>
+    </form>
+
+    <pre>{{ user | json }}</pre>

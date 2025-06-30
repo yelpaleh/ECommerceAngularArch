@@ -15,7 +15,7 @@ export class Sidebar {
     { path: '', label: 'Dashboard' },
     { path: 'about', label: 'About' },
     { path: 'customer', label: 'Customer' },
-    { path: 'product', label: 'Product' },
+    { path: 'product', label: 'Product List' },
     { path: 'order', label: 'Order' },
     { path: 'report', label: 'Report' },
     { path: 'contact', label: 'Contact' }

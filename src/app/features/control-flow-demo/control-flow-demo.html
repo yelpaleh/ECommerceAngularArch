@@ -1,0 +1,52 @@
+<h2>Angular 20 Control Flow Demo</h2>
+
+<div class="container mt-4">
+    <h3>If Block</h3>
+    <!-- @if -->
+    @if (isLoggedIn) {
+    <p style="color: green;">Welcome back!</p>
+    } @else {
+    <p style="color: red;">Please log in.</p>
+    }
+</div>
+
+<div class="container mt-4">
+@if (isFlag) {
+    <h3>Flag is True</h3>
+    <p>The flag is set to true.</p>
+} @else {
+    <h3>Flag is False</h3>
+    <p>The flag is set to false.</p>
+}
+</div>
+
+<div class="container mt-4">
+    <h3>for Block</h3>
+    <!-- @for with track -->
+    <ul>
+        @for (user of users; track user) {
+        <li>{{ user }}</li>
+        }
+    </ul>
+    <ul>
+        @for(item of status; track item){
+        <li>{{ item }}</li>
+        }
+    </ul>
+</div>
+
+<div class="container mt-4">
+    <h3>switch Block</h3>
+    <!-- @switch -->
+    @switch (role) {
+    @case ('admin') {
+    <p>You have admin access.</p>
+    }
+    @case ('editor') {
+    <p>You can edit content.</p>
+    }
+    @default {
+    <p>You are a viewer.</p>
+    }
+    }
+</div>

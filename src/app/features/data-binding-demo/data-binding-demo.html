@@ -1,0 +1,50 @@
+<p>{{ today | date:'short' }}</p>
+<!-- Output: 6/28/25, 10:30 AM -->
+<p>{{ today | date:'fullDate' }}</p>
+<!-- Output: Saturday, June 28, 2025 -->
+
+<p>Gender: {{ user.gender | genderPipeTs }}</p>
+@for(user of userList; track user.name) {
+  <p>{{ user.name }} - {{user.gender | genderPipeTs }}</p>
+}
+<h2>{{ title }}</h2>
+
+<div appDivHighlight>Welcome!!</div>
+
+<div *appShowIfEven ="4"> 4 is even</div>
+<div *appShowIfEven ="5"> this div will not show</div>
+<!-- Interpolation -->
+<p>Hello, {{ username }}!</p>
+
+<!-- Property Binding -->
+<img [src]="'https://picsum.photos/id/1/200/300'" alt="Sample image" />
+<button [disabled]="isButtonDisabled" (click)="onClick()">Click Me</button>
+
+<!-- Attribute Binding -->
+
+<div [attr.role]="userRole">Admin Panel</div> 
+
+<table border="1">
+    <tr>
+        <td [attr.colspan]="colSpan">This cell spans {{ colSpan }} columns</td>
+    </tr>
+</table>
+
+<div [class.active]="isActive">Status</div> 
+<div [class]="{warning: hasWarning, disabled: isDisabled}">Test</div> 
+
+<!-- Event Binding -->
+<button (click)="onSubmit()">Click Me</button>
+
+<input (input)="handleInput($event)"> 
+
+<!-- Two-way Binding -->
+<input [(ngModel)]="message" placeholder="Type a message" />
+<p>Your message: {{ message }}</p>
+<form>
+    <!-- <input [(ngModel)]="email" placeholder="Enter your email" />
+    <p>Your email: {{ email }}</p> -->
+<input [(ngModel)]="firstname" placeholder="Enter your firstname" />
+<p>Your firstname: {{ firstname }}</p>
+<button (click)="logFirstname($event)">Reset Firstname</button>
+</form>

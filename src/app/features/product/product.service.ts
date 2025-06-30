@@ -15,6 +15,9 @@ export class ProductService {
   getProducts(): Observable<Product[]> {
     return this.http.get<Product[]>(this.apiUrl);
   }
+  addProduct(product: Product): Observable<Product> {
+    return this.http.post<Product>(this.apiUrl, product);
+  }
 }
 // src/app/services/product.service.ts
 // This service provides methods to interact with the product API.
