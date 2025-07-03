@@ -26,7 +26,7 @@ export class ProductComponent implements OnInit {
       const modal = new bootstrap.Modal(modalEl);
       modal.show();
     } else {
-      console.error('❌ Bootstrap modal not available. Make sure Bootstrap JS is loaded.');
+      console.error('Bootstrap modal not available. Make sure Bootstrap JS is loaded.');
     }
   }
 
@@ -37,7 +37,7 @@ export class ProductComponent implements OnInit {
   }
 
   onProductAdded() {
-    this.productList(); // 🔄 reload table data
+    this.productList(); // reload table data
 
     // Close Bootstrap modal
     const modalEl = document.getElementById('productModal');
@@ -61,5 +61,17 @@ export class ProductComponent implements OnInit {
       }
     });
   }
+  selectedProduct: Product | null = null;
 
+  editProduct(product: Product) {
+    this.selectedProduct = { ...product }; // Clone to avoid live binding
+    const modalEl = document.getElementById('productModal');
+    if (modalEl) {
+      const modal = new (window as any).bootstrap.Modal(modalEl);
+      modal.show();
+    }
+  }
+  onModalClose() {
+    this.selectedProduct = null;
+  }
 }
