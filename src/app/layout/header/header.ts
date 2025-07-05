@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,8 +10,11 @@ import { Router } from '@angular/router';
 })
 export class Header {
   constructor(private router: Router) {}
-logout() {
-  localStorage.removeItem('isLoggedIn');
-  this.router.navigate(['/login']);
-}
+
+    @Output() toggle = new EventEmitter<void>();
+
+  logout() {
+    localStorage.removeItem('isLoggedIn');
+    location.href = '/login';
+  }
 }

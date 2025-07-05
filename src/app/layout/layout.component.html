@@ -1,0 +1,25 @@
+<!-- <app-header></app-header>
+<div class="d-flex">
+    <app-sidebar></app-sidebar>
+    <div class="p-4 flex-grow-1">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+<app-footer></app-footer> -->
+
+<app-header (toggle)="toggleSidebar()"></app-header>
+
+<div class="d-flex">
+  <div
+    class="sidebar transition-all bg-light border-end"
+    [class.collapsed]="isSidebarCollapsed"
+  >
+    <app-sidebar></app-sidebar>
+  </div>
+
+  <div class="flex-grow-1 p-4 main-content" [class.expanded]="isSidebarCollapsed">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<app-footer></app-footer>

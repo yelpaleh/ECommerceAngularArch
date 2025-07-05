@@ -1,0 +1,16 @@
+.sidebar {
+  width: 200px;
+  transition: width 0.3s ease;
+}
+
+.sidebar.collapsed {
+  width: 60px;
+}
+
+.main-content {
+  transition: margin 0.3s ease;
+}
+
+.main-content.expanded {
+  margin-left: -160px; /* shrink gap when sidebar collapsed */
+}
