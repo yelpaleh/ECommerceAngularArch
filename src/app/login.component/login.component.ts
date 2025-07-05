@@ -22,6 +22,7 @@ email = '';
     this.authService.login({ email: this.email, password: this.password }).subscribe({
       next: (res) => {
         //this.authService.storeToken(res.token);
+         this.authService.storeLoginState(res.token); // ✅ Store token + login flag
         this.router.navigate(['/dashboard']); // Redirect after login
       },
       error: () => {

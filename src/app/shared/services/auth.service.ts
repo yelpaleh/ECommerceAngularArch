@@ -15,4 +15,17 @@ export class AuthService {
     return this.http.post<{ token: string, role: string }>(`${this.apiUrl}/login`, credentials);
   }
  
+  storeLoginState(token: string): void {
+    localStorage.setItem('token', token);
+    localStorage.setItem('isLoggedIn', 'true');
+  }
+
+  logout(): void {
+    localStorage.removeItem('token');
+    localStorage.removeItem('isLoggedIn');
+  }
+
+  isAuthenticated(): boolean {
+    return localStorage.getItem('isLoggedIn') === 'true';
+  }
 }
