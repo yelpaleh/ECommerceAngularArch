@@ -1,69 +1,14 @@
-// template-driven.component.ts
-import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 
-@Component({
-  selector: 'app-template-form',
-  standalone: true,
-  imports: [FormsModule],
-  template: `
-    <h2>Template-driven Form</h2>
-    <form #f="ngForm" (ngSubmit)="onSubmit()">
-      <label>Name:</label>
-      <input name="name" [(ngModel)]="user.name" required />
-      <br />
-      <label>Email:</label>
-      <input name="email" [(ngModel)]="user.email" required email />
-      <br />
-      <button type="submit" [disabled]="f.invalid">Submit</button>
-    </form>
-    <pre>{{ user | json }}</pre>
-  `
-})
-export class TemplateDrivenFormComponent {
-  user = { name: '', email: '' };
 
-  onSubmit() {
-    console.log('Template-driven form submitted:', this.user);
-  }
-}
+Product Module - CRUD
 
-// reactive-form.component.ts
-import { Component } from '@angular/core';
-import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+Read - data show
+Create - Add Product - model popup
+Update - Edit Product
+Delete - remove from table
 
-@Component({
-  selector: 'app-reactive-form',
-  standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
-  template: `
-    <h2>Reactive Form</h2>
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
-      <label>Name:</label>
-      <input formControlName="name" />
-      <div *ngIf="form.get('name')?.invalid && form.get('name')?.touched">
-        Name is required.
-      </div>
-      <br />
-      <label>Email:</label>
-      <input formControlName="email" />
-      <div *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
-        Valid email is required.
-      </div>
-      <br />
-      <button type="submit" [disabled]="form.invalid">Submit</button>
-    </form>
-    <pre>{{ form.value | json }}</pre>
-  `
-})
-export class ReactiveFormDemoComponent {
-  form = new FormGroup({
-    name: new FormControl('', Validators.required),
-    email: new FormControl('', [Validators.required, Validators.email])
-  });
+CRUD - Add.html, Edit.html, View.html
 
-  onSubmit() {
-    console.log('Reactive form submitted:', this.form.value);
-  }
-}
+API - AuthController / LoginController
+
+POST - username & password - OK (200)

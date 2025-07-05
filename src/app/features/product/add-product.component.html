@@ -23,7 +23,7 @@
     <label>Category:</label>
     <select class="form-select" name="categoryId" [(ngModel)]="formModel.categoryId" required>
       <option value="">Select Category</option>
-      <option *ngFor="let cat of categories" [value]="cat.id">{{ cat.name }}</option>
+      <option *ngFor="let item of categories" [value]="item.id">{{ item.name }}</option>
     </select>
   </div>
 

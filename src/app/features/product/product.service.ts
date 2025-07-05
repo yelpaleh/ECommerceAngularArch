@@ -21,6 +21,12 @@ export class ProductService {
   updateProduct(product: Product): Observable<Product> {
   return this.http.put<Product>(`${this.apiUrl}/${product.productId}`, product);
 }
+//Delete Product Function
+deleteProduct(productId: number): Observable<void> {
+  //https://localhost:7044/api/Product/1
+  return this.http.delete<void>(`${this.apiUrl}/${productId}`); 
+}
+
 }
 // src/app/services/product.service.ts
 // This service provides methods to interact with the product API.

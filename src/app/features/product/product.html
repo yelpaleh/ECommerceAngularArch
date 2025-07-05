@@ -17,7 +17,7 @@
                 <th>Price</th>
                 <th>Stock Qty</th>
                 <th>Category ID</th>
-                <th>Edit</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -29,10 +29,13 @@
                 <td>{{ p.stockQuantity }}</td>
                 <td>{{ p.categoryId }}</td>
                 <td>
-    <button class="btn btn-sm btn-primary" (click)="editProduct(p)">
-      ✏️ Edit
-    </button>
-  </td>
+                  <button class="btn btn-sm btn-primary" (click)="editProduct(p)">
+                    Edit
+                  </button>
+                  <button class="btn btn-sm btn-danger" (click)="productDelete(p.productId)">
+                    Delete
+                  </button>
+                </td>
             </tr>
         </tbody>
     </table>

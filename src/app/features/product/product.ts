@@ -74,4 +74,14 @@ export class ProductComponent implements OnInit {
   onModalClose() {
     this.selectedProduct = null;
   }
+
+  productDelete(productId: number) {
+    if (confirm('Are you sure you want to delete this product?')) {
+      this.productService.deleteProduct(productId).subscribe({
+        next: () => {
+          this.productList(); // Refresh the product list after deletion
+        }
+      });
+    }
+  }
 }
