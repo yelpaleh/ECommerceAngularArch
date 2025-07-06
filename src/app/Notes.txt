@@ -1,0 +1,8 @@
+Excel export: via xlsx + file-saver
+PDF export: via jspdf + jspdf-autotable
+
+Install Required Packages
+npm install xlsx file-saver jspdf jspdf-autotable --save
+
+Install Type Definitions
+npm install --save-dev @types/file-saver
