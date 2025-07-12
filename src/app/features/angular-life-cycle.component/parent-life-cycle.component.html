@@ -1,0 +1,6 @@
+<div>
+      <h1>Angular Lifecycle Hooks Demo</h1>
+      <button (click)="toggleChild()">Toggle Child Component</button>
+      <button (click)="updateValue()">Update Input</button>
+      <app-angular-life-cycle *ngIf="showChild" [inputValue]="parentValue"></app-angular-life-cycle>
+    </div>

@@ -13,6 +13,8 @@ import { TemplateDrivenForms } from './features/template-driven-forms/template-d
 import { authGuard } from './guard/auth.guard';
 import { LoginComponent } from './login.component/login.component';
 import { LayoutComponent } from './layout/layout.component';
+import { AngularLifeCycleComponent } from './features/angular-life-cycle.component/angular-life-cycle.component';
+import { ParentLifeCycleComponent } from './features/angular-life-cycle.component/parent-life-cycle.component';
 
 export const routes: Routes = [
     // Login (without layout)
@@ -39,7 +41,8 @@ export const routes: Routes = [
     { path: 'data-binding-demo', component: DataBindingDemo },
     { path: 'template-driven-forms', component: TemplateDrivenForms },
     { path: '', redirectTo: 'login', pathMatch: 'full' }, // Default route
-
+    {path: 'parent-life-cycle', component: ParentLifeCycleComponent },
+    {path: 'angular-life-cycle', component: AngularLifeCycleComponent },
     // Wildcard
     { path: '**', redirectTo: 'login' }
 ];

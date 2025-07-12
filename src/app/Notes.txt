@@ -6,3 +6,28 @@ npm install xlsx file-saver jspdf jspdf-autotable --save
 
 Install Type Definitions
 npm install --save-dev @types/file-saver
+========================================================
+
+Component Relationship:
+1. Parent >> Child [@Input]
+2. Child  >> Parent [@output]
+
+Product >> List Product(template) [Parent Component] -- Modal Popup(Add/Edit) [child Component]
+
+username[parent] >> child Component >> username  >> @Input - decorator
+
+Modal Popup(Add/Edit) [child Component]  >> List Product(template) [Parent Component]
+@Output + EventEmitter
+
+
+No Relationship between Component ? shared services / observables
+
+Parent >> Child
+===========================================
+
+What Happens When You Run This:
+Initially, the child component goes through all lifecycle stages (constructor → ngOnChanges → ngOnInit → etc.).
+
+Clicking "Update Input" triggers ngOnChanges, ngDoCheck, and all Checked hooks.
+
+Clicking "Toggle Child Component" destroys the component and re-creates it — so you'll see ngOnDestroy followed by the full cycle again.
